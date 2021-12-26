@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 public class ItemValuedComponent extends Item {
@@ -24,7 +25,7 @@ public class ItemValuedComponent extends Item {
 	
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(new TranslatableText("item." + Instances.MOD_ID + "." + type + ".tooltip.v" + value));
+		tooltip.add(new TranslatableText("item." + Instances.MOD_ID + "." + type + ".tooltip.v" + value).formatted(Formatting.GRAY));
 	}
 	
 	
