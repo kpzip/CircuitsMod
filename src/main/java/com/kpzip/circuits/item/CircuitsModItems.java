@@ -1,5 +1,6 @@
 package com.kpzip.circuits.item;
 
+import com.kpzip.circuits.item.customItems.ItemResistor;
 import com.kpzip.circuits.util.RegistryDictionary;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -9,9 +10,13 @@ public final class CircuitsModItems {
 	
 	public static final RegistryDictionary<Item> ITEMS = new RegistryDictionary<Item>();
 	
+	
+	
+	
+	//Materials
 	public static final Item COPPER_WIRE = ITEMS.add(new Item(new FabricItemSettings().group(CircuitsModItemGroups.MATERIALS)), "copper_wire");
 	
-	//Resistors
-	public static final Item RESISTOR = ITEMS.add(new Item(new FabricItemSettings().group(CircuitsModItemGroups.MATERIALS)), "resistor");
+	//Components
+	public static final Item RESISTOR = ITEMS.add(new ItemResistor(new FabricItemSettings()), "resistor");
 	
 }
