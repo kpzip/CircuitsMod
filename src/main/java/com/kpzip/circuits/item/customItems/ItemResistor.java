@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 public class ItemResistor extends Item {
@@ -38,7 +39,7 @@ public class ItemResistor extends Item {
 		if (!nbt.contains(RESISTANCE_NBT_KEY)) {
 			nbt.putString(RESISTANCE_NBT_KEY, "");
 		}
-		tooltip.add(new TranslatableText("item.circuits.resistor.tooltip.v" + nbt.getString(RESISTANCE_NBT_KEY)));
+		tooltip.add(new TranslatableText("item.circuits.resistor.tooltip.v" + nbt.getString(RESISTANCE_NBT_KEY)).formatted(Formatting.GRAY));
 	}
 
 }
