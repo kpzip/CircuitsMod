@@ -1,14 +1,14 @@
 {
 	//Items
 	"item.circuits.copper_wire": "Copper Wire",
-	"item.circuits.resistor1ohm": "Resistor",
-	"item.circuits.resistor_unknown": "Resistor",
+	"item.circuits.resistor": "Resistor",
 	
 	//Blocks
 	
 	
 	//Creative Tabs
 	"itemGroup.circuits.circuits_materials": "Circuits Mod Materials",
+	"itemGroup.circuits.circuits_components": "Circuits Mod Components",
 	
 	//Tooltips
 	"item.circuits.resistor.tooltip.v1": "1 Ω",
