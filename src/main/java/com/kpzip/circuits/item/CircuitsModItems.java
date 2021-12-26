@@ -10,6 +10,6 @@ public final class CircuitsModItems {
 	
 	public static final RegistryDictionary<Item> ITEMS = new RegistryDictionary<Item>();
 	
-	public static final Item COPPER_WIRE = ITEMS.add(new Item(new FabricItemSettings().group(ItemGroup.MISC)), "copper_wire");
+	public static final Item COPPER_WIRE = ITEMS.add(new Item(new FabricItemSettings().group(CircuitsModItemGroups.MATERIALS)), "copper_wire");
 
 }
