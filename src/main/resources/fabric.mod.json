@@ -11,6 +11,7 @@
   ],
   "contact": {
     "homepage": "",
+    "issues": "https://github.com/kpzip/CircuitsMod/issues",
     "sources": "https://github.com/kpzip/CircuitsMod"
   },
 
@@ -33,6 +34,5 @@
     "java": ">=17"
   },
   "suggests": {
-    "another-mod": "*"
   }
 }
