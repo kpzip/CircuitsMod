@@ -1,4 +1,4 @@
-package com.kpzip.circuits;
+package com.kpzip.circuits.util;
 
 //Class for global variables
 public final class Instances {
