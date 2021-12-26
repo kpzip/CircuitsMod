@@ -1,3 +1,10 @@
 {
-	"item.circuits.copper_wire": "Copper Wire"
+	//Items
+	"item.circuits.copper_wire": "Copper Wire",
+	
+	//Blocks
+	
+	
+	//Creative Tabs
+	"itemGroup.circuits.circuits_materials": "Circuits Mod Materials"
 }
