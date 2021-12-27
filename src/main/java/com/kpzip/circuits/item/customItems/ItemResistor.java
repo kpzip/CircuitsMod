@@ -28,9 +28,16 @@ public class ItemResistor extends Item {
 	
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+		/*
+		 * TODO
+		 * This code should probably be optimized or the result should be cached in some way since this function runs
+		 * every frame
+		 */
 		
+		//Get the resistance of the itemStack
 		int resistance = getItemStackResistance(stack);
 		
+		//If the resistance is 0, assume that it is undefined and add just write "Unknown Resistance"
 		if (resistance <= 0) {
 			tooltip.add(new TranslatableText("item.circuits.resistor.tooltip.0").formatted(Formatting.GRAY));
 		}
@@ -40,12 +47,12 @@ public class ItemResistor extends Item {
 			//Set metric prefixes
 			if (resistance >= 1000000) {
 				text = String.valueOf(resistance/1000000.0f);
-				text = text.substring(0, text.length() >= 4 ? 4 : text.length());
+				text = text.substring(0, text.length() >= 5 ? 5 : text.length());
 				text += " M" + FunnySymbols.OMEGA;
 			}
 			else if (resistance >= 1000) {
 				text = String.valueOf(resistance/1000.0f);
-				text = text.substring(0, text.length() >= 3 ? 3 : text.length());
+				text = text.substring(0, text.length() >= 4 ? 4 : text.length());
 				text += " k" + FunnySymbols.OMEGA;
 			}
 			else {
@@ -53,7 +60,7 @@ public class ItemResistor extends Item {
 				text += " " + FunnySymbols.OMEGA;
 			}
 			
-			//remove the decimal point and anything after that to remove things like 10. and 10.0
+			//remove unnecessary decimal points to get rid of things like 5. and 8.0
 			String[] split = text.split("\\.");
 			if (split.length > 1) {
 				boolean doesNotNeedDecimal = true;
@@ -67,6 +74,8 @@ public class ItemResistor extends Item {
 				}
 			}
 			
+			//add the tooltip with the formatted text
+			//This does not need to use a translatable text component since it used only numbers and SI unit symbols
 			tooltip.add(new LiteralText(text).formatted(Formatting.GRAY));
 		}
 		
@@ -109,6 +118,7 @@ public class ItemResistor extends Item {
 		}
 	}
 	
+	//Uses the list of resistance values and generates an array of ItemStacks that need to be added to the creative tab
 	public static ItemStack[] getItemStacksForCreativeTab() {
 		ItemStack[] items = new ItemStack[CREATIVE_TAB_RESISTANCES.length];
 		NbtCompound nbt;

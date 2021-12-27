@@ -19,7 +19,7 @@ public class ItemCapacitor extends Item {
 	
 	public static final String CAPACITANCE_NBT_KEY = "capacitance";
 	
-	public static final int[] CREATIVE_TAB_CAPACITANCES = new int[]{0, 1, 100, 500, 1000, 10000, 100000, 1000000, 10000000, 100000000};
+	public static final int[] CREATIVE_TAB_CAPACITANCES = new int[]{0, 1, 100, 500, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
 	
 
 	public ItemCapacitor(Settings settings) {
@@ -28,9 +28,16 @@ public class ItemCapacitor extends Item {
 	
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+		/*
+		 * TODO
+		 * This code should probably be optimized or the result should be cached in some way since this function runs
+		 * every frame
+		 */
 		
+		//Get the capacitance of the itemStack
 		int capacitance = getItemStackCapacitance(stack);
 		
+		//If the capacitance is 0, assume that it is undefined and add just write "Unknown Resistance"
 		if (capacitance <= 0) {
 			tooltip.add(new TranslatableText("item.circuits.capacitor.tooltip.0").formatted(Formatting.GRAY));
 		}
@@ -48,7 +55,7 @@ public class ItemCapacitor extends Item {
 				text += " pF";
 			}
 			
-			//remove the decimal point and anything after that to remove things like 10. and 10.0
+			//remove unnecessary decimal points to get rid of things like 5. and 8.0
 			String[] split = text.split("\\.");
 			if (split.length > 1) {
 				boolean doesNotNeedDecimal = true;
@@ -62,6 +69,8 @@ public class ItemCapacitor extends Item {
 				}
 			}
 			
+			//add the tooltip with the formatted text
+			//This does not need to use a translatable text component since it used only numbers and SI unit symbols
 			tooltip.add(new LiteralText(text).formatted(Formatting.GRAY));
 		}
 		
@@ -104,6 +113,7 @@ public class ItemCapacitor extends Item {
 		}
 	}
 	
+	//Uses the list of capacitance values and generates an array of ItemStacks that need to be added to the creative tab
 	public static ItemStack[] getItemStacksForCreativeTab() {
 		ItemStack[] items = new ItemStack[CREATIVE_TAB_CAPACITANCES.length];
 		NbtCompound nbt;
