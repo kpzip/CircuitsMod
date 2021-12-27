@@ -3,6 +3,7 @@ package com.kpzip.circuits.item.customItems;
 import java.util.List;
 
 import com.kpzip.circuits.item.CircuitsModItems;
+import com.kpzip.circuits.util.FunnySymbols;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -40,16 +41,16 @@ public class ItemResistor extends Item {
 			if (resistance >= 1000000) {
 				text = String.valueOf(resistance/1000000.0f);
 				text = text.substring(0, text.length() >= 4 ? 4 : text.length());
-				text += " MΩ";
+				text += " M" + FunnySymbols.OMEGA;
 			}
 			else if (resistance >= 1000) {
 				text = String.valueOf(resistance/1000.0f);
 				text = text.substring(0, text.length() >= 3 ? 3 : text.length());
-				text += " kΩ";
+				text += " k" + FunnySymbols.OMEGA;
 			}
 			else {
 				text = String.valueOf(resistance);
-				text += " Ω";
+				text += " " + FunnySymbols.OMEGA;
 			}
 			
 			//remove the decimal point and anything after that to remove things like 10. and 10.0
