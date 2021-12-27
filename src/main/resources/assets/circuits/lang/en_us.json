@@ -11,6 +11,5 @@
 	"itemGroup.circuits.circuits_components": "Circuits Mod Components",
 	
 	//Tooltips
-	"item.circuits.resistor.tooltip.v1": "1 Ω",
-	"item.circuits.resistor.tooltip.v": "Unknown Resistance"
+	"item.circuits.resistor.tooltip.0": "Unknown Resistance"
 }
