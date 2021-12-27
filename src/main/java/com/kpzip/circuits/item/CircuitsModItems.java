@@ -20,5 +20,6 @@ public final class CircuitsModItems {
 	//Components
 	public static final Item RESISTOR = ITEMS.add(new ItemResistor(new FabricItemSettings()), "resistor");
 	public static final Item CAPACITOR = ITEMS.add(new ItemCapacitor(new FabricItemSettings()), "capacitor");
+	public static final Item TRANSISTOR = ITEMS.add(new Item(new FabricItemSettings()), "transistor");
 	
 }

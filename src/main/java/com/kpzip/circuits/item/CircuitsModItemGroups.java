@@ -33,6 +33,9 @@ public final class CircuitsModItemGroups {
 					stacks.add(e);
 				}
 				
+				//Other Components
+				stacks.add(new ItemStack(CircuitsModItems.TRANSISTOR, 1));
+				
 			})
 			.build();
 }
