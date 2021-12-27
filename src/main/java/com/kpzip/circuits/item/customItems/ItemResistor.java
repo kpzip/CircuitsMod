@@ -115,7 +115,7 @@ public class ItemResistor extends Item {
 		ItemStack resistor;
 		for (int i = 0; i < items.length; i++) {
 			nbt = new NbtCompound();
-			nbt.putInt(ItemResistor.RESISTANCE_NBT_KEY, CREATIVE_TAB_RESISTANCES[i]);
+			nbt.putInt(RESISTANCE_NBT_KEY, CREATIVE_TAB_RESISTANCES[i]);
 			resistor = new ItemStack(CircuitsModItems.RESISTOR, 1);
 			resistor.setNbt(nbt);
 			items[(items.length - 1) - i] = resistor;

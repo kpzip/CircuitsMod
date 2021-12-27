@@ -1,5 +1,6 @@
 package com.kpzip.circuits.item;
 
+import com.kpzip.circuits.item.customItems.ItemCapacitor;
 import com.kpzip.circuits.item.customItems.ItemResistor;
 import com.kpzip.circuits.util.Instances;
 
@@ -18,6 +19,14 @@ public final class CircuitsModItemGroups {
 			new Identifier(Instances.MOD_ID, "circuits_components")).icon(
 			() -> new ItemStack(CircuitsModItems.RESISTOR))
 			.appendItems(stacks -> {
+				
+				
+				//Add Capacitors
+				ItemStack[] capacitors = ItemCapacitor.getItemStacksForCreativeTab();
+				for (ItemStack e : capacitors) {
+					stacks.add(e);
+				}
+				
 				//Add Resistors
 				ItemStack[] resistors = ItemResistor.getItemStacksForCreativeTab();
 				for (ItemStack e : resistors) {

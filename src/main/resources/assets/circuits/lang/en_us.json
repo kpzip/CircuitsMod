@@ -2,7 +2,7 @@
 	//Items
 	"item.circuits.copper_wire": "Copper Wire",
 	"item.circuits.resistor": "Resistor",
-	
+	"item.circuits.capacitor": "Capacitor",
 	//Blocks
 	
 	
@@ -11,5 +11,6 @@
 	"itemGroup.circuits.circuits_components": "Circuits Mod Components",
 	
 	//Tooltips
-	"item.circuits.resistor.tooltip.0": "Unknown Resistance"
+	"item.circuits.resistor.tooltip.0": "Unknown Resistance",
+	"item.circuits.capacitor.tooltip.0": "Unknown Capacitance"
 }
